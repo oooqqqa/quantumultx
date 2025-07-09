@@ -1,9 +1,9 @@
 /**
  * @fileoverview 将 Surge 规则集转换为 QuantumultX 支持的规则格式，支持参数解析与 domain-set 特殊逻辑
  * @supported Quantumult X (v1.0.8-build253)
+ * 解析 URL 中的参数，例如 https://example.com/rules.list#policy=direct&domain-set=true
  */
 
-// 解析 URL 中的参数，例如 https://example.com/rules.list#policy=direct&domain-set=true
 function parseParams(url) {
   const paramStr = url.split('#')[1] || '';
   return paramStr.split('&').reduce((params, pair) => {
